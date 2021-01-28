@@ -173,7 +173,7 @@ $ sudo apt-get update
 > $ sudo apt-get update
 > ```
 
-> Troubleshooting : If some errors appears during the update of the package lists from the package sources **on the ENSG network** you might need to set proxy. To set ENSG proxy for the current terminal (this settings will dissapear if you close the terminal window)
+> Troubleshooting : If some errors appears during the update of the package lists from the package sources **on the ENSG network** you might need to set proxy. To set ENSG proxy for the current terminal (this settings will dissapear if you close the terminal window) **Ask for the full IP of the ENSG proxy**
 > ```
 > $ export HTTP_PROXY=http://10.x.x.x:3128
 > $ export HTTPS_PROXY=http://10.x.x.x:3128
@@ -241,7 +241,7 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
 
-> Troubleshooting : If Docker is not able to get the image while working on the ENSG network it probably needs ENSG proxy definition.
+> Troubleshooting : If Docker is not able to get the image while working on the ENSG network it probably needs ENSG proxy definition.**Ask for the full IP of the ENSG proxy**
 > ```
 > $ sudo mkdir -p /etc/systemd/system/docker.service.d
 > $ sudo touch /etc/systemd/system/docker.service.d/http-proxy.conf
