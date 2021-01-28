@@ -342,7 +342,7 @@ $ cd ~/istsos-docker
 $ docker-compose up -d
 ```
 
-> Troubleshooting : Once again, Docker will need to access the Internet to build the istSOS image. If you are working from the ENSG network, proxy information may be needed. Edit the `~/istsos-docker/docker-compose.yml` file.
+> Troubleshooting : Once again, Docker will need to access the Internet to build the istSOS image. If you are working **from the ENSG network**, proxy information may be needed. Edit the `~/istsos-docker/docker-compose.yml` file.
 > Uncomment the proxy args
 > ```
 >   istsos:
@@ -367,6 +367,16 @@ $ docker-compose up -d
 >         https_proxy: 'http://10.x.x.x:3128'
 >     ports:
 >       - "127.0.0.1:80:80"
+> ```
+
+> Troubleshooting : If during docker-compose up you get the following error
+> ```
+> Error starting userland proxy: listen tcp4 127.0.0.1:80. bind: adress already in use
+> ```
+> It means some web server is already listening on port 80. Try and stop the following services and try again
+> ```
+> $ sudo service nginx stop
+> $ sudo service apache2 stop
 > ```
 
 ### Shutting down the service
