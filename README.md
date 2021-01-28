@@ -164,15 +164,15 @@ If it is not the case, install docker and docker-compose following the procedure
 $ sudo apt-get update
 ```
 
-If some errors appears during the update of the package lists from the package sources, you might have some unreachable package sources in your `/etc/apt/sources.list` . If you are using Ubuntu 18.04 you can use this [file](etc/ubuntu-18.04/sources.list)
+> Troubleshooting : If some errors appears during the update of the package lists from the package sources, you might have some unreachable package sources in your `/etc/apt/sources.list` . If you are using Ubuntu 18.04 you can use this [file](etc/ubuntu-18.04/sources.list)
+> ```
+> $ cd ~
+> $ sudo rm /etc/apt/sources.list
+> $ wget https://raw.githubusercontent.com/esgn/pdm-workshop/main/etc/ubuntu-18.04/sources.list
+> $ sudo cp sources.list /etc/apt/
+> $ sudo apt-get update
+> ```
 
-```
-$ cd ~
-$ sudo rm /etc/apt/sources.list
-$ wget https://raw.githubusercontent.com/esgn/pdm-workshop/main/etc/ubuntu-18.04/sources.list
-$ sudo cp sources.list /etc/apt/
-$ sudo apt-get update
-```
 Then install the necessary packages
 
 ```
@@ -300,7 +300,6 @@ $ git clone https://github.com/esgn/istsos-docker.git
 ```
 
 > Troubleshooting : If you encounter some difficulties during the git clone operation from the ENSG network, git is probably missing the ENSG proxy information. Add the following information and try to clone again. **Ask for the full IP of the ENSG proxy**.
-
 > ```
 > $ git config --global http.proxy http://10.x.x.x:3128
 > $ git config --global https.proxy http://10.x.x.x:3128
@@ -313,7 +312,6 @@ $ docker-compose up -d
 ```
 
 > Troubleshooting : Once again, Docker will need to access the Internet to build the istSOS image. If you are working from the ENSG network, proxy information may be needed. Edit the `~/istsos-docker/docker-compose.yml` file.
-
 > Uncomment the proxy args
 > ```
 >   istsos:
