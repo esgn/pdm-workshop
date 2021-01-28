@@ -164,13 +164,20 @@ If it is not the case, install docker and docker-compose following the procedure
 $ sudo apt-get update
 ```
 
-> Troubleshooting : If some errors appears during the update of the package lists from the package sources, you might have some unreachable package sources in your `/etc/apt/sources.list` . If you are using Ubuntu 18.04 you can use this [file](etc/ubuntu-18.04/sources.list)
+> Troubleshooting : If some errors appears during the update of the package lists from the package sources **outside of ENSG network**, you might have some unreachable package sources in your `/etc/apt/sources.list` . If you are using Ubuntu 18.04 you can use this [file](etc/ubuntu-18.04/sources.list)
 > ```
 > $ cd ~
 > $ sudo rm /etc/apt/sources.list
 > $ wget https://raw.githubusercontent.com/esgn/pdm-workshop/main/etc/ubuntu-18.04/sources.list
 > $ sudo cp sources.list /etc/apt/
 > $ sudo apt-get update
+> ```
+
+> Troubleshooting : If some errors appears during the update of the package lists from the package sources **on the ENSG network** you might need to set proxy. To set ENSG proxy for the current terminal (this settings will dissapear if you close the terminal window)
+> ```
+> $ export HTTP_PROXY=http://10.x.x.x:3128
+> $ export HTTPS_PROXY=http://10.x.x.x:3128
+> $ export NO_PROXY=localhost,127.0.0.1
 > ```
 
 Then install the necessary packages
