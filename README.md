@@ -547,7 +547,7 @@ We are going to execute an import script inside the istsos-2.3.3 container.
 ```
     $ docker exec -ti istsos-2.3.3 /bin/sh
     / # cd /tmp/tutorial
-    / # python fill/execute.py
+    /tmp/tutorial # python fill/execute.py
 ```
 If everything goes according to plan you should see the following output after having executed execute.py
 ```
@@ -560,7 +560,7 @@ If everything goes according to plan you should see the following output after h
  
  You can now exit from the container
 ```
-     / # exit
+     /tmp/tutorial # exit
 ```
 
 :keyboard: **Have a look at the [execute.py](https://github.com/esgn/istsos-docker/blob/master/istsos/files/tutorial/fill/execute.py) and [procedure.py](https://github.com/esgn/istsos-docker/blob/master/istsos/files/tutorial/fill/procedure.py) scripts. The request to create new procedures are sent to http://localhost/istsos/wa/istsos/services. What is the usual name of this kind of API where information is structured in the URL (e.g http://localhost/istsos/wa/istsos/services/demo/procedures/LOCARNO) and where messsage are exchanged as JSON objects ? What kind of HTTP request has been sent to http://localhost/istsos/wa/istsos/service to create the procedures ?** (1 point)
@@ -651,7 +651,7 @@ We're going to upload the data using an existing script inside istsos-2.3.3 cont
 ```
 $ docker exec -ti istsos-2.3.3 /bin/sh
     / # cd /usr/local/istsos
-    / # python scripts/csv2istsos.py -p BELLINZONA LOCARNO P_LUGANO T_LUGANO GRABOW RH_GNOSCA -u http://localhost/istsos -s demo -w /tmp/dataset
+    /usr/local/istsos # python scripts/csv2istsos.py -p BELLINZONA LOCARNO P_LUGANO T_LUGANO GRABOW RH_GNOSCA -u http://localhost/istsos -s demo -w /tmp/dataset
 ```
 
 The import will start and you should see text block like below as output of the python command 
@@ -672,7 +672,7 @@ Insert ST: BELLINZONA
 You can exit the container when all the imports have taken place
 
 ```
-    / # exit
+    /usr/local/istsos # exit
 ```
 
 The data are being imported by sending information to istSOS internal API.
