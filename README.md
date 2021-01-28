@@ -143,6 +143,8 @@ In order to ease the deployment of istSOS, we are going to use a Docker image. T
 
 ## Docker installation
 
+Have a look to this [page](https://www.freecodecamp.org/news/docker-simplified-96639a35ff36/) if you want to learn more about Docker.
+
 ### Check installation status
 
 Check if docker and docker-compose is already installed on your machine by running the following commands:
