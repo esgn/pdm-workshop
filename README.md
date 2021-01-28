@@ -964,7 +964,7 @@ You can display the user interface of pyWPS in your browser by opening http://lo
 
 Open the GetCapablities of the service
 
-:keyboard: **What are the mandatory operations of a WPS 1.0.0 ? By looking at the WPS standard explain what these operation do** (1 point)
+:keyboard: **What are the mandatory operations of a WPS 1.0.0 ? By looking at the WPS standard explain what these operations do** (1 point)
 
 ### Ask the ultimate question
 
