@@ -233,6 +233,30 @@ Share images, automate workflows, and more with a free Docker ID:
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
+
+> Troubleshooting : If Docker is not able to get the image while working on the ENSG network it probably needs ENSG proxy definition.
+> ```
+> $ sudo mkdir -p /etc/systemd/system/docker.service.d
+> $ sudo touch /etc/systemd/system/docker.service.d/http-proxy.conf
+> $ sudo gedit /etc/systemd/system/docker.service.d/http-proxy.conf
+> ```
+> Add the following lines to the file and save
+> ```
+> [Service]
+> Environment="http_proxy=http://10.x.x.x:3128/"
+> Environment="https_proxy=https://10.x.x.x:3128/"
+> Environment=no_proxy=localhost,127.0.0.1
+> ```
+> Then execute the following commands
+> ```
+> $ sudo systemctl daemon-reload
+> $ sudo systemctl restart docker
+> ```
+> And try again 
+> ```
+> $ sudo docker run hello-world
+> ```
+
 6. Create the docker group if it does not exist already
 ```
 $ sudo groupadd docker
