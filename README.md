@@ -297,11 +297,46 @@ $ cd ~
 $ git clone https://github.com/esgn/istsos-docker.git
 ```
 
+> Troubleshooting : If you encounter some difficulties during the git clone operation from the ENSG network, git is probably missing the ENSG proxy information. Add the following information and try to clone again. **Ask for the full IP of the ENSG proxy**.
+
+> ```
+> $ git config --global http.proxy http://10.x.x.x:3128
+> $ git config --global https.proxy http://10.x.x.x:3128
+> ```
+
 Then deploy the istSOS service using docker-compose. The service might take a few minute to deploy.
 ```
 $ cd ~/istsos-docker
 $ docker-compose up -d
 ```
+
+> Troubleshooting : Once again, Docker will need to access the Internet to build the istSOS image. If you are working from the ENSG network, proxy information may be needed. Edit the `~/istsos-docker/docker-compose.yml` file.
+
+> Uncomment the proxy args
+> ```
+>   istsos:
+>     container_name: istsos-2.3.3
+>     build :
+>       context: ./istsos
+>       # If docker runs behind proxy
+>       # args:
+>         # http_proxy: 'http://bloody_proxy_IP:3128'
+>         # https_proxy: 'http://bloody_proxy_IP:3128'
+>     ports:
+>       - "127.0.0.1:80:80"
+> ```
+>  And define the proxies with the ENSG proxy IP
+> ```
+>   istsos:
+>     container_name: istsos-2.3.3
+>     build :
+>       context: ./istsos
+>       args:
+>         http_proxy: 'http://10.x.x.x:3128'
+>         https_proxy: 'http://10.x.x.x:3128'
+>     ports:
+>       - "127.0.0.1:80:80"
+> ```
 
 ### Shutting down the service
 
