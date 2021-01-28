@@ -952,8 +952,8 @@ $ docker run -d -p 5000:5000 pywps-demo
 > # ENV HTTPS_PROXY http://bloody_proxy_ip:3128
 > ```
 > ``` 
-> # ENV HTTP_PROXY http://10.x.x.x:3128
-> # ENV HTTPS_PROXY http://10.x.x.x:3128
+> ENV HTTP_PROXY http://10.x.x.x:3128
+> ENV HTTPS_PROXY http://10.x.x.x:3128
 > ```
 
 You can display the user interface of pyWPS in your browser by opening http://localhost:5000.
