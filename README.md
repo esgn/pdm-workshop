@@ -60,11 +60,11 @@ Table of Contents
 
 ## Sensor Web Enablement
 
-The OGC Sensor Web Enablement (SWE) working group was established to provide a first definition of the system that is able to enable the development of the Sensor Web idea by identifying the technology, the language syntax and the architecture to be used.
+The OGC Sensor Web Enablement ([SWE](https://www.ogc.org/node/698)) working group was established to provide a first definition of the system that is able to enable the development of the Sensor Web idea by identifying the technology, the language syntax and the architecture to be used.
 
 In summary, the SWE aim is to define a unique environment where specialists and users can search, access, and process data observed by a multitude of heterogeneous sensor networks.
 
-With this propose the SWE working group has defined a series of OpenGIS® standards:
+With this purpose the SWE working group has defined a series of OpenGIS® standards:
 
 1. [SWE Common](https://www.ogc.org/standards/swecommon): XML model for sensors data
 2. [SensorML](https://www.ogc.org/standards/sensorml) (Sensor model Language): XML model for processes and components
@@ -74,8 +74,8 @@ With this propose the SWE working group has defined a series of OpenGIS® standa
 
 And a series of candidate specification or discussion paper like the:
 
-1. SAS (Sensor Alert Service): interface for dispatching alerts using the XMPP (extensible messaging and presence protocol)
-2. WMS (Web Notification Service): interface for the notification of information with different protocols
+1. [SAS](https://www.ogc.org/standards/requests/44) (Sensor Alert Service): interface for dispatching alerts using the XMPP (extensible messaging and presence protocol)
+2. WNS (Web Notification Service): interface for the notification of information with different protocols
 
 ## Sensor Observation Service
 
@@ -102,10 +102,10 @@ The typical use cases from a data consumer and data producer perspective are pre
 The SOS is based on five key objects as represented in Figure-2 :
 
 1. **Observations**: they are the center of the standard and represent the **values mesured** at given time instants (e.g.: value: 0.2, time: 08-11-2012 12:12) and represented according to the O&M standard data model.
-2. **Procedure**: indicates who provide the observations, this is generally the **sensor** but it may also be a generic process that leads to some observations (e.g.: procedure: TREVANO) and is represented as SensorML standard data model.
-3. **Observed Properties**: they represent the **phenomena** that are observed (e.g.: phenomenon: air-temperature) and is represented with a URI (uniform resource identifier) composed by colon separated text according to the om:observedProperty of the O&M standard.
-4. **Feature of interest**: it is the feature that relates to the observations, so for an in-place instrument is the **sensor location**, while for remote device it the target location (e.g.: location: Trevano, coordinates: 718345,99224,389, reference system: CH1903/LV03) represented according to the om:featureOfInterest element of the O&M standard.
-5. **Offering**: it is a **collection of sensor** used to conveniently group them up (e.g.: offering: weather-sensor-SUPSI) and is represented as sos:ObservationOffering element of the SOS standard.
+2. **Procedure**: indicates who provide the observations, this is generally the **sensor** but it may also be a generic process that leads to some observations (e.g.: `procedure: TREVANO`) and is represented as SensorML standard data model.
+3. **Observed Properties**: they represent the **phenomena** that are observed (e.g.: `phenomenon: air-temperature`) and is represented with a URI (uniform resource identifier) composed by colon separated text according to the `om:observedProperty` of the O&M standard.
+4. **Feature of interest**: it is the feature that relates to the observations, so for an in-place instrument is the **sensor location**, while for remote device it the target location (e.g.: `location: Trevano, coordinates: 718345,99224,389, reference system: CH1903/LV03`) represented according to the `om:featureOfInterest` element of the O&M standard.
+5. **Offering**: it is a **collection of sensor** used to conveniently group them up (e.g.: `offering: weather-sensor-SUPSI`) and is represented as sos:ObservationOffering element of the SOS standard.
 
 <p align="center">
  <img src="pics/datatypes.png"/>
@@ -117,19 +117,19 @@ The SOS is based on five key objects as represented in Figure-2 :
 
 # istSOS : An open-source OGC SOS Implementation
 
-For this workshop we are going to use [istSOS](http://istsos.org/) developed by Istituto Scienze della Terra. 
+For this workshop we are going to use [istSOS](http://istsos.org/) developed by the [Istituto Scienze della Terra](https://www.supsi.ch/ist). 
 The development of istSOS started in 2009 in order to provide a simple implementation of the SOS standard for the management, provision and integration of hydro-meteorological data.
 istSOS implement the full SOS standard (all the profiles) and proposes extensions to the standard in order the maximize the compatibility of the service and to offer a better user experience.
 
 ## Technology stack
 
 IstSOS is a Python Free Open Source Software based on: 
-* PostgreSQL / Postgis
-* Apache / mod_wsgi
-* Following python modules
-	* isodate
-    * psycopg2
-    * pytz
+* [PostgreSQL](https://www.postgresql.org/) / [PostGIS](https://postgis.net/)
+* [Apache](https://httpd.apache.org/) / [mod_wsgi](https://modwsgi.readthedocs.io/en/master/)
+* [Python](https://www.python.org/) and the following Python modules :
+	* [isodate](https://pypi.org/project/isodate/)
+    * [psycopg2](https://pypi.org/project/psycopg2/)
+    * [pytz](https://pypi.org/project/pytz/)
 
 <p align="center">
  <img src="pics/istsos.png"/>
@@ -139,7 +139,7 @@ IstSOS is a Python Free Open Source Software based on:
 
 ## istSOS deployment with Docker
 
-In order to ease the deployment of istSOS, we are going to use a Docker image. The source of the image is available at https://github.com/esgn/istsos-docker
+In order to ease the deployment of istSOS, we are going to use a [Docker](https://www.docker.com/) image. The source of the image is available in the following repository : https://github.com/esgn/istsos-docker
 
 ## Docker installation
 
@@ -153,8 +153,9 @@ Check if docker and docker-compose is already installed on your machine by runni
 $ docker --version
 $ docker-compose --version
 ```
-If a version number is returned in each case, docker and docker-compose are correctly installed. You can skip the docker and docker-compose installation paragraphs below. 
-If it is not the case, install docker and docker-compose following the procedure below
+
+> :warning: **If a version number is returned in each case, docker and docker-compose are correctly installed. You can skip the docker and docker-compose installation paragraphs below. 
+If it is not the case, install docker and/or docker-compose following the procedure below**
 
 ### Docker installation
 
@@ -192,14 +193,13 @@ $ sudo apt-get install \
 ```
 2. Add Docker's official GPG key
 ```
-$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 ```
 3. Add docker repository
 ```
-$ sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
+$ echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 4. Install Docker
 ```
@@ -276,7 +276,7 @@ $ sudo usermod -aG docker $USER
 ```
 $ newgrp docker 
 ```
-9. Verify that you can run `docker` commands without `sudo`
+9. Verify that you can run `docker` commands without `sudo` (this is normally something which is not recommended but it will help during the course of this workshop)
 ```
 $ docker run hello-world
 ```
@@ -290,7 +290,7 @@ $ sudo apt install curl -y
 2. Get docker-compose
 
 ```
-$ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+$ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
 3. Apply executable permissions to the binary
 ```
@@ -326,7 +326,7 @@ Now that we’ve installed Docker and Docker Compose, we’re now ready to build
 First clone the repository
 
 ```
-$ cd ~
+$ cd
 $ git clone https://github.com/esgn/istsos-docker.git
 ```
 
@@ -381,7 +381,7 @@ $ docker-compose up -d
 
 ### Shutting down the service
 
-If at any time you want to start again and erase all changes done to the istSOS service you can use the `docker-compose down` command. **Warning** the database containing your changes will be erased if you choose to do so. **Do not test this command now, save it for later use in case of errors**
+If at any time you want to start again and erase all changes done to the istSOS service you can use the `docker-compose down` command. **Warning** the database containing your changes will be erased if you choose to do so. :warning: **Do not test this command now, save it for later use in case of errors**
 ```
 $ cd ~/istsos-docker
 $ docker-compose down -v
