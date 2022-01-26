@@ -458,6 +458,8 @@ Default EPSG code:  This will be the native Coordinate Reference System of your 
 
 Permitted EPSG:  Here you can configure which other Coordinate Reference Systems your system will support and reproject to if requested.
 
+Leave the existing information untouched.
+
 :computer_mouse: **Configure your getObservation request options**
 <img align="right" src="pics/getobs.png"/>
 
@@ -472,7 +474,7 @@ The Proxy URL field is the base URL seen beyond a reverse proxy. Leave it untouc
 
 <br/>
 
-:keyboard: **In your opinion, where service provider information, service identification information, service coordinates system and getObservation options will be made available to there end-user ? Through a SOS service operation ? If so, which operation ?** (1 point)
+:keyboard: **In your opinion, where service provider information, service identification information, service coordinates system and getObservation options will be made available to the end-user ? Through a SOS service operation ? If so, which operation ?** (1 point)
 
 ## Create a new service
 
@@ -516,10 +518,10 @@ In the **Procedure:** section
 |Name: |GRABOW|
 |Description: |Enorasis Meteo Station in Grabow, Poland.|
 |Keywords: |weather, meteorological,IUNG-PIB|
-|System type: |insitu-fixed-point (autocomplete or select in list)|
+|System type: |insitu-fixed-point *(autocomplete or select in list)*|
 |Sensor type: |Meteo Station|
 FOI name: |GRABOW|
-|EPSG: |4326 (autocomplete or select in list)|
+|EPSG: |4326 *(autocomplete or select in list)*|
 |Coordinates: |x: 22.67 y: 51.25 z: 177|
 
 :computer_mouse: **Add relative humidity**
@@ -528,10 +530,10 @@ In Outputs subsection
 
 | Parameter | Value |
 | --- | --- |
-|Observed property:|urn:ogc:def:parameter:x-istsos:1.0:meteo:air:humidity:relative (autocomplete or select in list)|
-|Unit of measure: |% (autocomplete or select in list)|
+|Observed property:|urn:ogc:def:parameter:x-istsos:1.0:meteo:air:humidity:relative *(autocomplete or select in list)*|
+|Unit of measure: |% *(autocomplete or select in list)*|
 |Description: | |
-|Quality index check: |Between / from 0 to 100|
+|Statistical Quality Index Constraints: |Between / from 0 to 100|
 
 Click **Add** and go the next observed property. 
 
@@ -539,10 +541,10 @@ Click **Add** and go the next observed property.
 
 | Parameter | Value |
 | --- | --- |
-|Observed property:|urn:ogc:def:parameter:x-istsos:1.0:meteo:air:rainfall (autocomplete or select in list)|
-|Unit of measure: |mm (autocomplete or select in list)|
+|Observed property:|urn:ogc:def:parameter:x-istsos:1.0:meteo:air:rainfall *(autocomplete or select in list)*|
+|Unit of measure: |mm *(autocomplete or select in list)*|
 |Description: | |
-|Quality index check: |Between / from 0 to +500|
+|Statistical Quality Index Constraints: |Between / from 0 to +500|
 
 Click **Add** and go the next observed property. 
 
@@ -550,10 +552,10 @@ Click **Add** and go the next observed property.
 
 | Parameter | Value |
 | --- | --- |
-|Observed property:|urn:ogc:def:parameter:x-istsos:1.0:meteo:air:temperature (autocomplete or select in list)|
-|Unit of measure: |°C (autocomplete or select in list)|
+|Observed property:|urn:ogc:def:parameter:x-istsos:1.0:meteo:air:temperature *(autocomplete or select in list)*|
+|Unit of measure: |°C *(autocomplete or select in list)*|
 |Description: |conversion from resistance to temperature|
-|Quality index check: |Between / from -40 to +60|
+|Statistical Quality Index Constraints: |Between / from -40 to +60|
 
 Click **Add** and go the next observed property. 
 
@@ -561,10 +563,10 @@ Click **Add** and go the next observed property.
 
 | Parameter | Value |
 | --- | --- |
-|Observed property:|urn:ogc:def:parameter:x-istsos:1.0:meteo:air:wind:velocity (autocomplete or select in list)|
-|Unit of measure: |m/s (autocomplete or select in list)|
+|Observed property:|urn:ogc:def:parameter:x-istsos:1.0:meteo:air:wind:velocity *(autocomplete or select in list)*|
+|Unit of measure: |m/s *(autocomplete or select in list)*|
 |Description: | |
-|Quality index check: |Between / from 0 to 200|
+|Statistical Quality Index Constraints: |Between / from 0 to 200|
 
 Click **Add** and go the next observed property. 
 
@@ -572,10 +574,10 @@ Click **Add** and go the next observed property.
 
 | Parameter | Value |
 | --- | --- |
-|Observed property:|urn:ogc:def:parameter:x-istsos:1.0:meteo:solar:radiation (autocomplete or select in list)|
-|Unit of measure: |W/m2 (autocomplete or select in list)|
+|Observed property:|urn:ogc:def:parameter:x-istsos:1.0:meteo:solar:radiation *(autocomplete or select in list)*|
+|Unit of measure: |W/m2 *(autocomplete or select in list)*|
 |Description: | |
-|Quality index check: |from 0 to +500|
+|Statistical Quality Index Constraints: |from 0 to +500|
 
 :computer_mouse: **Click Submit button in the top right corner to create your new procedure**
 
@@ -613,9 +615,7 @@ Click on procedures and verify you have more sensors than before.
 
 :computer_mouse: **Verify the inserted prodedures using direct queries**
 
-Let’s try to execute a getCapabilities request to verify if procedures are now available. We can use the "Requests" test page where some request examples are already available. Feel free to come back to this page to understand the various SOS operations and answer subsequents questions : 
-
-	http://localhost/istsos/modules/requests
+Let’s try to execute a getCapabilities request to verify if procedures are now available. We can use the "Requests" test page (`http://localhost/istsos/modules/requests/`) where some request examples are already available. Feel free to come back to this page to understand the various SOS operations and answer subsequents questions. 
 
 Full GetCapabilities request: 
 	
@@ -631,8 +631,8 @@ You can try for other procedure (aka sensor) like P_LUGANO, LOCARNO, BELLINZONA,
 
 :keyboard: **In what format are the information describing a procedure (aka sensor) returned ? What is the OGC standard used for describing the sensor ?** (1 point)
 
->Note : Procedures are stored in the SOS with a uniqueID which is urn:ogc:def:procedure:xistsos:1.0:XXXX for procedure named XXXX. 
->istSOS, as we will see later for other parameters, is not strict and allows to specify just the procedure name in the request. In the previous example we're using procedure=T_LUGANO instead of prodecure=urn:ogc:def:procedure:xistsos:1.0:LUGANO.
+>Note : Procedures are stored in the SOS with a uniqueID which is `urn:ogc:def:procedure:xistsos:1.0:XXXX` for a procedure named XXXX. 
+>istSOS, as we will see later for other parameters, is not strict and allows to specify just the procedure name in the request. In the previous example we're using `procedure=T_LUGANO` instead of `prodecure=urn:ogc:def:procedure:xistsos:1.0:LUGANO`.
 
 ## Observation offerings
 
@@ -652,12 +652,12 @@ In the Sensor Observation Service 1.0.0 the concept of an Observation Offering i
 | --- | --- |
 |Name |	workshop|
 |Description |	demo dataset|
-|Expiration (optional) |	2022-01-01T00:00:00+09:00|
+|Expiration (optional) |	2025-01-01T00:00:00+01:00|
 |Visibility 	|check Enabled|
 
 :computer_mouse: **Associate procedures with offering**
 
-Activate the tab panel pressing “Offering-procedure memberships”. In the dropdown list select the newly created offering “workshop”. On the left side you will see all the procedure that will be assigned to that offering. On the right there are all the procedures not assigned to that offering. Use drag and drop functionality to move procedures from right to left.
+Activate the tab panel pressing “Offering-procedure memberships”. In the dropdown list select the newly created offering “workshop”. On the left side you will see all the procedure that will be assigned to that offering. On the right there are all the procedures not assigned to that offering. Use drag and drop functionality to move procedures LOCARNO and T_LUGANO from right to left.
 
 :computer_mouse: **Verify that procedures are associated with offering as desired**
 
@@ -671,7 +671,7 @@ http://localhost/istsos/demo?request=getCapabilities&section=contents&service=SO
 
 ## Inserting observation data
 
-For this part of the tutorial you should use ASCII files with sensor data formatted according to text/csv;subtype=istSOS. This format is a CSV represented by a header as the first line containing the URI names of the observed properties, the following lines contains the data. In a real world use case the sensors will upload data regularly as they are acquired. Here we are going to import multiple days of sensor data.
+For this part of the tutorial you should use ASCII files with sensor data formatted according to `text/csv;subtype=istSOS`. This format is a CSV represented by a header as the first line containing the URI names of the observed properties, the following lines contains the data. In a real world use case the sensors will upload data regularly as they are acquired. Here we are going to import multiple days of sensor data.
 
 Example: T_LUGANO_20141231234000000.dat
 
@@ -685,7 +685,7 @@ urn:ogc:def:parameter:x-istsos:1.0:time:iso8601,urn:ogc:def:parameter:x-istsos:1
 
 :computer_mouse: **Have a look at the CSV files in the istsos/files/dataset directory of the cloned repository**
 
-We're going to upload the data using an existing script inside istsos-2.3.3 container.
+We're going to upload the data using an existing script inside istsos-2.3.3 Docker container.
 
 :computer_mouse: **Import observation data for you service offerings**
 
@@ -695,7 +695,7 @@ $ docker exec -ti istsos-2.3.3 /bin/sh
     /usr/local/istsos # python scripts/csv2istsos.py -p BELLINZONA LOCARNO P_LUGANO T_LUGANO GRABOW RH_GNOSCA -u http://localhost/istsos -s demo -w /tmp/dataset
 ```
 
-The import will start and you should see text block like below as output of the python command 
+The import will start and you should see text block like below as output of the python command for each procedure
 ```
 Offering: temporary
 Procedure: BELLINZONA
@@ -717,7 +717,7 @@ You can exit the container when all the imports have taken place
 ```
 
 The data are being imported by sending information to istSOS internal API.
-Even if we have used the csv2istsos script to facilitate the data loading, users may also use the OGC SOS insertObservation operation directly. 
+Even if we have used the `csv2istsos` script to facilitate the data loading, users may also use the OGC SOS insertObservation operation directly. 
 
 For example, a valid request for loading a single observation to the service is:
 
@@ -796,7 +796,7 @@ For example, a valid request for loading a single observation to the service is:
 :computer_mouse: **Let’s insert observations using the XML format**
 
 1. Open the requests test page: ​http://localhost/istsos/modules/requests/
-2. Select the "demo" service instance
+2. Select the "demo" service instance in the field where it is written `Choose the istSOS Instance`
 3. Choose the "POST" option
 4. Select InsertObservation in the Requests dropdown menu
 5. Press "Send"
@@ -877,7 +877,7 @@ Via its REST interface istSOS allow to get the list of all procedures in the Geo
 
 http://localhost/istsos/wa/istsos/services/demo/procedures/operations/geojson
 
-To add the istSOS layer is quite simple. You have to create a Vector Layer with a Vector Source. And the source have to be configured defining the format (as GeoJSON) and the url (from where to download the GeoJSON data). GeoJSON is an open standard format designed to representing simple geographical features along with their non-spatial attributes. It's based on the JSON format. The coordinate reference system for all GeoJSON coordinates is WGS84 (EPSG 4326) that is to say longitude, latitude in decimal degree.
+To add an istSOS layer to an openlayers map is quite simple. You have to create a Vector Layer with a Vector Source. And the source have to be configured defining the format (as GeoJSON) and the url (from where to download the GeoJSON data). GeoJSON is an open standard format designed to representing simple geographical features along with their non-spatial attributes. It's based on the JSON format. The coordinate reference system for all GeoJSON coordinates is WGS84 (EPSG 4326) that is to say longitude, latitude in decimal degree.
 
 :keyboard: **You'll find [here](quickstart2.html) a second html page you'll have to edit to display sensor on the map. You'll have to replace the XXX that appears in the file by the correct value. All the information needed are in the previous paragraph.**
 
@@ -899,7 +899,7 @@ Add the following lines to the previous example to modify the rendering style of
 
 ## Display sensor metadata
 
-You'll find [here](quickstart3.html) a second html page you'll have to edit to display sensor on the map
+You'll find [here](quickstart3.html) a third html page you'll have to edit to display sensor on the map
 
 :keyboard: **When the user click on a sensor position we want to display the start time and end time of measurement and the observed properties. You'll have to find the name of the start and end time of sampling and replace the XXX in the html file. Clue : All the data displayed in the webpage come from this request : http://localhost/istsos/wa/istsos/services/demo/procedures/operations/geojson**
 

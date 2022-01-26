@@ -5,7 +5,7 @@ FROM python:3.8-slim
 
 RUN apt-get update && apt-get install -y git python3-gdal
 
-RUN git clone git://github.com/geopython/pywps-flask.git pywps-flask
+RUN git clone https://github.com/geopython/pywps-flask.git pywps-flask
 
 WORKDIR /pywps-flask
 RUN pip3 install -r requirements.txt
