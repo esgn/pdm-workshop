@@ -991,22 +991,12 @@ Client sends the Execute request with explicit request for asynchronous mode. If
 
 ## PyWPS : OpenSource python WPS implementation
 
-In the pyWPS directory of this repository, you'll find a Dockerfile to run a demo instance of pywps
+This time we are going to use a [pyWPS](https://pywps.org/) pre-built image available in the [Docker hub](https://hub.docker.com)
 
 ``` 
-$ cd ~/pdm-workshop/pywps
-$ docker build -t pywps-demo .
-$ docker run -d -p 5000:5000 pywps-demo
+$ docker pull pywps/flask-alpine:3.6
+$ docker run -p 5000:5000 pywps/flask-alpine:3.6
 ```
-> Troubleshooting : If you encounter some errors while building the docker image from the ENSG network, uncomment the ENV line from the Dockerfile and update them with ENSG proxy IP.
-> ``` 
-> # ENV HTTP_PROXY http://bloody_proxy_ip:3128
-> # ENV HTTPS_PROXY http://bloody_proxy_ip:3128
-> ```
-> ``` 
-> ENV HTTP_PROXY http://10.x.x.x:3128
-> ENV HTTPS_PROXY http://10.x.x.x:3128
-> ```
 
 You can display the user interface of pyWPS in your browser by opening http://localhost:5000.
 
