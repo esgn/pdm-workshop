@@ -995,7 +995,7 @@ This time we are going to use a [pyWPS](https://pywps.org/) pre-built image avai
 
 ``` 
 $ docker pull pywps/flask-alpine:3.6
-$ docker run -p 5000:5000 pywps/flask-alpine:3.6
+$ docker run -d -p 5000:5000 pywps/flask-alpine:3.6
 ```
 
 You can display the user interface of pyWPS in your browser by opening http://localhost:5000.
