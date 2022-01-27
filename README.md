@@ -594,9 +594,9 @@ Click **Add** and go the next observed property.
 
 ## Register procedures automatically
 
-In order to speed up the **boring** process of inserting all the other procedures we have prepared a script. 
+In order to speed up the **tedious** process of inserting all the other procedures we have prepared a script. 
 
-We are going to execute an import script inside the istsos-2.3.3 container.
+We are going to execute an import script from inside the istsos-2.3.3 container.
 
 ```
     $ docker exec -ti istsos-2.3.3 /bin/sh
@@ -1020,7 +1020,7 @@ Open the GetCapablities of the service
 
 ## No, this workshop was not a complete waste of your time ;)
 
-We’ve discovered during the course of this workshop two new kings of OGC services. Unlike WMS, WMTS or WFS these services are rarely encountered by the general GIS users. 
+We’ve discovered during the course of this workshop two new kinds of OGC services. Unlike WMS, WMTS or WFS these services are rarely encountered by the general GIS users. 
 
 You will find in the following presentation a real world application of SOS and WPS with the addition of RDF and GeoSparql : http://geospatialworldforum.org/2014/presentation/Sensors/Isao%20Kujima%20-%20geospatialworldforum2014X-PDF.pdf. This shows how interopable services can help different counterparts building rapidly data pipelines to gather information and offer a large variety of outputs (maps, statistics,...)
 
