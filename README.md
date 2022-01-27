@@ -189,6 +189,7 @@ $ sudo apt-get install \
     ca-certificates \
     curl \
     gnupg-agent \
+    lsb-release \
     software-properties-common -y
 ```
 2. Add Docker's official GPG key
