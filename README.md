@@ -380,6 +380,14 @@ $ docker-compose up -d
 > $ sudo service apache2 stop
 > ```
 
+You can check that the two containers are up and running by using the `docker ps` command. You should get a similar output to this one : 
+
+```
+CONTAINER ID   IMAGE                        COMMAND                  CREATED              STATUS              PORTS                  NAMES
+e3a45cf61a02   mdillon/postgis:9.6-alpine   "docker-entrypoint.s…"   About a minute ago   Up About a minute   5432/tcp               istsos-2.3.3-db
+09f6e583263d   istsos-docker_istsos         "httpd -D FOREGROUND"    About a minute ago   Up 2 seconds        127.0.0.1:80->80/tcp   istsos-2.3.3
+```
+
 ### Shutting down the service
 
 If at any time you want to start again and erase all changes done to the istSOS service you can use the `docker-compose down` command. **Warning** the database containing your changes will be erased if you choose to do so. :warning: **Do not test this command now, save it for later use in case of errors**
