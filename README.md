@@ -244,7 +244,7 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
 
-> Troubleshooting : If Docker is not able to get the image while working on the ENSG network it probably needs ENSG proxy definition.**Ask for the full IP of the ENSG proxy**
+> Troubleshooting : If Docker is not able to get the `hello-world`image while working on the ENSG network it probably needs ENSG proxy definition.**Ask for the full IP of the ENSG proxy**
 > ```
 > $ sudo mkdir -p /etc/systemd/system/docker.service.d
 > $ sudo touch /etc/systemd/system/docker.service.d/http-proxy.conf
@@ -324,7 +324,7 @@ $ sudo apt install git -y
 ### Clone and deploy
 
 Now that we’ve installed Docker and Docker Compose, we’re now ready to build and automatically deploy an instance of ISTsos. 
-**Warning**: The database content is not persisted. If you kill the docker containers you will lose all your changes.
+⚠️ The database content is **not persisted**. If you kill the docker containers you will lose all your changes.
 
 First clone the repository
 
