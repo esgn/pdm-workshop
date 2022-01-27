@@ -442,7 +442,7 @@ These values are the one defined in the `docker-compose.yml` file. The istsos co
 
 * :computer_mouse:  Test the connection using the "Test connection" button. The test should be successful.
 
-* :warning: Do not forget to click on the Submit button on the top right corner to save your changes before leaving
+* :warning: **Do not forget to click on the Submit button on the top right corner to save your changes before leaving**
   
 <p align="center">
  <img src="pics/db_submit.png"/>
