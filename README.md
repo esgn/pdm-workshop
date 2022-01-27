@@ -50,6 +50,8 @@ Table of Contents
 
 # Workshop general guidelines
 
+⚠️ This workshop is to be done using Ubuntu. Please choose the Ubuntu distribution on startup.
+
 :keyboard: => This means an answer is expected from you. You can write your answers in a new markdown document or any other type of document you will send at the end of the workshop.
 
 :computer_mouse: => This denotes an action you must do to progress into the workshop
