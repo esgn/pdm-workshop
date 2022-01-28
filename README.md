@@ -803,7 +803,7 @@ For example, a valid request for loading a single observation to the service is:
             </swe:DataArray>
         </om:result>
     </om:Observation>
-</sos:InsertObservation>`
+</sos:InsertObservation>
 ```
 
 :computer_mouse: **Let’s insert observations using the XML format**
@@ -815,7 +815,7 @@ For example, a valid request for loading a single observation to the service is:
 5. Press "Send"
 6. Note: You may need to update the `<AssignedSensorId>` with the correct id of the sensor.
 
-:keyboard: **What is the reponse of the service. What is the meaning of `<AssignedObservationId>` and its content ?** (1 point)
+:keyboard: **What is the reponse of the service ? What is the meaning of `<AssignedObservationId>` and its content ?** (1 point)
 
 :keyboard: **How could such an operation be used in the real world ? Imagine a simple use case that will use the InsertObversation operation.** (1 point)
 
