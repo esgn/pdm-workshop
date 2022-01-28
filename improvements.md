@@ -5,4 +5,4 @@
 
 ## Bugs 
 
-* When declaring a new procedure if an extra space exists in the coordinates of the station the submit will fail
+* When declaring a new procedure if an extra space exists in the coordinates of the station the submit will fail => submit this to the istsos as a bug if not already fixed
