@@ -607,7 +607,9 @@ If everything goes according to plan you should see the following output after h
 ```
  Add procedure
  Add virtual procedure
- Add virtual procedure script
+ Add virtual procedure scriptkeyboard What is the reponse of the service. What is the meaning of <AssignedObservationId> and its content ? (1 point)
+
+keyboard How could such an operation be used in the real world ? Imagine a simple use case that will use the InsertObversation operation. (1 point)
 {"message": "", "success": true}
  Terminated :)
  ```
@@ -816,6 +818,10 @@ For example, a valid request for loading a single observation to the service is:
 :keyboard: **What is the reponse of the service. What is the meaning of `<AssignedObservationId>` and its content ?** (1 point)
 
 :keyboard: **How could such an operation be used in the real world ? Imagine a simple use case that will use the InsertObversation operation.** (1 point)
+
+```diff
+- END OF WORKSHOP EVALUATION FOR PDM 2022
+```
 
 ## Accessing data
 
