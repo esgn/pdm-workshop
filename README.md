@@ -89,7 +89,7 @@ The requests are sent to the service through an HTTP POST (in this case an XML f
 
 The service responses are always XML file compliant with the specifications. According to the OGC specification a SOS version 1.0 service must implement at minimum the three mandatory requests of the SOS core profile, while the operations or other profiles are optional
 
-:keyboard: **Download the OGC SOS standard in its 1.0.0 version from the OGC website : list all the mandatory operations of the service and describe briefly what the goal of each operation is.** (1 point)
+:keyboard: **Download the OGC OpenGIS SOS standard in its 1.0.0 version from the OGC website : list all the mandatory operations of the service and describe briefly what the goal of each operation is.** (1 point)
 
 :keyboard: **What are the different profiles available for the SOS service in its 1.0.0 version ?** (1 point)
 
