@@ -89,9 +89,9 @@ The requests are sent to the service through an HTTP POST (in this case an XML f
 
 The service responses are always XML file compliant with the specifications. According to the OGC specification a SOS version 1.0 service must implement at minimum the three mandatory requests of the SOS core profile, while the operations or other profiles are optional
 
-:keyboard: **Download the OGC OpenGIS SOS standard in its 1.0.0 version from the OGC website : list all the mandatory operations of the service and describe briefly what the goal of each operation is.** (1 point)
+:keyboard: **Q1 : Download the OGC OpenGIS SOS standard in its 1.0.0 version from the OGC website : list all the mandatory operations of the service and describe briefly what the goal of each operation is.** (1 point)
 
-:keyboard: **What are the different profiles available for the SOS service in its 1.0.0 version ?** (1 point)
+:keyboard: **Q2 : What are the different profiles available for the SOS service in its 1.0.0 version ?** (1 point)
 
 The typical use cases from a data consumer and data producer perspective are presented in the following UML sequence diagrams:
 
@@ -115,7 +115,7 @@ The SOS is based on five key objects as represented in Figure-2 :
  <em>OGC SOS main datatypes</em>
 </p>
 
-:keyboard: **Explain in your own words what problem(s) the OGC SOS 1.0.0 standard is trying to solve** (1 point)
+:keyboard: **Q3 : Explain in your own words what problem(s) the OGC SOS 1.0.0 standard is trying to solve** (1 point)
 
 # istSOS : An open-source OGC SOS Implementation
 
@@ -485,7 +485,7 @@ The Proxy URL field is the base URL seen beyond a reverse proxy. Leave it untouc
 
 <br/>
 
-:keyboard: **In your opinion, where service provider information, service identification information, service coordinates system and getObservation options will be made available to the end-user ? Through a SOS service operation ? If so, which operation ?** (1 point)
+:keyboard: **Q4 : In your opinion, where service provider information, service identification information, service coordinates system and getObservation options will be made available to the end-user ? Through a SOS service operation ? If so, which operation ?** (1 point)
 
 ## Create a new service
 
@@ -504,11 +504,11 @@ Press next to create the new **demo** service. If something's gone wrong during 
 
 :computer_mouse: **Get service GetCapabilities**
 
-:keyboard: **Adapt the following URL to request the GetCapabilities of your new service http://localhost/istsos/demo?request=xxxxxxx&service=xxxxxx and copy this URL in your document** (1 point)
+:keyboard: **Q5 : Adapt the following URL to request the GetCapabilities of your new service http://localhost/istsos/demo?request=xxxxxxx&service=xxxxxx and copy this URL in your document** (1 point)
 
 Take some time to review the GetCapabilities document.
 
-:keyboard: **Find in the GetCapabilities response the parameters of the GetCapabilities operation. What's the use of the "acceptversions" parameter ?** (1 point)
+:keyboard: **Q6 : Find in the GetCapabilities response the parameters of the GetCapabilities operation. What's the use of the "acceptversions" parameter ?** (1 point)
 
 ## Register a new sensor
 
@@ -607,9 +607,7 @@ If everything goes according to plan you should see the following output after h
 ```
  Add procedure
  Add virtual procedure
- Add virtual procedure scriptkeyboard What is the reponse of the service. What is the meaning of <AssignedObservationId> and its content ? (1 point)
-
-keyboard How could such an operation be used in the real world ? Imagine a simple use case that will use the InsertObversation operation. (1 point)
+ Add virtual procedure script
 {"message": "", "success": true}
  Terminated :)
  ```
@@ -619,7 +617,7 @@ keyboard How could such an operation be used in the real world ? Imagine a simpl
      /tmp/tutorial # exit
 ```
 
-:keyboard: **Have a look at the [execute.py](https://github.com/esgn/istsos-docker/blob/master/istsos/files/tutorial/fill/execute.py) and [procedure.py](https://github.com/esgn/istsos-docker/blob/master/istsos/files/tutorial/fill/procedure.py) scripts. The request to create new procedures are sent to http://localhost/istsos/wa/istsos/services. What is the usual name of this kind of API where information is structured in the URL (e.g http://localhost/istsos/wa/istsos/services/demo/procedures/LOCARNO) and where messsage are exchanged as JSON objects ? What kind of HTTP request has been sent to http://localhost/istsos/wa/istsos/service to create the procedures ?** (1 point)
+:keyboard: **Q7 : Have a look at the [execute.py](https://github.com/esgn/istsos-docker/blob/master/istsos/files/tutorial/fill/execute.py) and [procedure.py](https://github.com/esgn/istsos-docker/blob/master/istsos/files/tutorial/fill/procedure.py) scripts. The request to create new procedures are sent to http://localhost/istsos/wa/istsos/services. What is the usual name of this kind of API where information is structured in the URL (e.g http://localhost/istsos/wa/istsos/services/demo/procedures/LOCARNO) and where messsage are exchanged as JSON objects ? What kind of HTTP request has been sent to http://localhost/istsos/wa/istsos/service to create the procedures ?** (1 point)
 
 :computer_mouse: **Verify the inserted prodedures using the administration interface**
 <img align="right" src="pics/procedures.png"/>
@@ -638,11 +636,11 @@ Full GetCapabilities request contents section only:
 	
 	http://localhost/istsos/demo?request=getCapabilities&section=contents&service=SOS 
 
-:keyboard: **Now create an HTTP query to get more information about the T_LUGANO sensor using the Describe Sensor operation of the SOS standard. You will have to supply the outputFormat in its URL encoded form (`outputFormat=text%2Fxml%3Bsubtype%3D%22sensorML%2F1.0.1%22`). Copy this query in your document.** (1 point)
+:keyboard: **Q8 : Now create an HTTP query to get more information about the T_LUGANO sensor using the Describe Sensor operation of the SOS standard. You will have to supply the outputFormat in its URL encoded form (`outputFormat=text%2Fxml%3Bsubtype%3D%22sensorML%2F1.0.1%22`). Copy this query in your document.** (1 point)
 
 You can try for other procedure (aka sensor) like P_LUGANO, LOCARNO, BELLINZONA, GRABOW, RH_GNOSCA
 
-:keyboard: **In what format are the information describing a procedure (aka sensor) returned ? What is the OGC standard used for describing the sensor ?** (1 point)
+:keyboard: **Q9 : In what format are the information describing a procedure (aka sensor) returned ? What is the OGC standard used for describing the sensor ?** (1 point)
 
 >Note : Procedures are stored in the SOS with a uniqueID which is `urn:ogc:def:procedure:xistsos:1.0:XXXX` for a procedure named XXXX. 
 >istSOS, as we will see later for other parameters, is not strict and allows to specify just the procedure name in the request. In the previous example we're using `procedure=T_LUGANO` instead of `prodecure=urn:ogc:def:procedure:xistsos:1.0:LUGANO`.
@@ -678,7 +676,7 @@ Then check the getCapabilities request to see what happened.
 
 http://localhost/istsos/demo?request=getCapabilities&section=contents&service=SOS&acceptversions=1.0.0
 
-:keyboard: **Copy paste in your document the section  of the GetCapabilities that describes the workshop offering** (0.5 point)
+:keyboard: **Q10 : Copy paste in your document the section  of the GetCapabilities that describes the workshop offering** (0.5 point)
 
 > The “temporary” offering is system wide offering that is used to associate every registered procedure. Every new procedure is automatically assigned to this offering.
 
@@ -815,9 +813,9 @@ For example, a valid request for loading a single observation to the service is:
 5. Press "Send"
 6. Note: You may need to update the `<AssignedSensorId>` with the correct id of the sensor.
 
-:keyboard: **What is the reponse of the service ? What is the meaning of `<AssignedObservationId>` and its content ?** (1 point)
+:keyboard: **Q11 : What is the reponse of the service ? What is the meaning of `<AssignedObservationId>` and its content ?** (1 point)
 
-:keyboard: **How could such an operation be used in the real world ? Imagine a simple use case that will use the InsertObversation operation.** (1 point)
+:keyboard: **Q12 : How could such an operation be used in the real world ? Imagine a simple use case that will use the InsertObversation operation.** (1 point)
 
 ```diff
 - END OF WORKSHOP EVALUATION FOR PDM 2022
@@ -849,9 +847,9 @@ Accessing the data is possible using the SOS Standard requests, WA REST requests
 |featureOfInterest |Specifies the feature for which observations are requested. This can either be represented by a reference to a feature ID advertised in the capabilities document or can be a spatial constraint. |  |Zero or many (Optional)|
 |responseFormat |Specifies the desired resultFormat MIME content type for transport of the results (e.g. TML, O&M native format, or MPEG stream out-of-band). The supported output formats are listed in the selected offering capabilities. Desired output format of the getObservation operation. This can be a MimeType or QName for example. |text/xml;subtype=”sensor ML/1.0.0” |One (mandatory)|
 
-:keyboard: **Write an HTTP GET query using the OGC SOS 1.0.0 syntax that returns rainfalls from sensor LOCARNO between 2015-05-03T15:00:00+01 and 2015-05-04T14:59:59+01. Copy the query in your document** (2 points)
+:keyboard: **Q13 : Write an HTTP GET query using the OGC SOS 1.0.0 syntax that returns rainfalls from sensor LOCARNO between 2015-05-03T15:00:00+01 and 2015-05-04T14:59:59+01. Copy the query in your document** (2 points)
 
-:keyboard: **Write the same query to get the result in JSON as output format. Copy the query in your document** (0.5 point)
+:keyboard: **Q14 : Write the same query to get the result in JSON as output format. Copy the query in your document** (0.5 point)
 
 ### GetObservation via WA API
 
@@ -1012,15 +1010,15 @@ You can display the user interface of pyWPS in your browser by opening http://lo
 
 Open the GetCapablities of the service
 
-:keyboard: **What are the mandatory operations of a WPS 1.0.0 ? By looking at the WPS standard explain what these operations do** (1 point)
+:keyboard: **Q15 : What are the mandatory operations of a WPS 1.0.0 ? By looking at the WPS standard explain what these operations do** (1 point)
 
 ### Ask the ultimate question
 
-:keyboard: **Query the process "ultimate question" and record the answer of the process in your document** (1 point)
+:keyboard: **Q16 : Query the process "ultimate question" and record the answer of the process in your document** (1 point)
 
 ### Create a new process
 
-:keyboard: **(Optional) Create a new process which takes data of a SOS sensor as input and returns, for example, the mean of the values. Have a look at http://pywps.readthedocs.io/en/master for more information on how to write custom WPS processes.** (5 points)
+:keyboard: **Q17 : (Optional) Create a new process which takes data of a SOS sensor as input and returns, for example, the mean of the values. Have a look at http://pywps.readthedocs.io/en/master for more information on how to write custom WPS processes.** (5 points)
 
 # SOS/WPS : A real world example
 
@@ -1030,4 +1028,4 @@ We’ve discovered during the course of this workshop two new kinds of OGC servi
 
 You will find in the following presentation a real world application of SOS and WPS with the addition of RDF and GeoSparql : http://geospatialworldforum.org/2014/presentation/Sensors/Isao%20Kujima%20-%20geospatialworldforum2014X-PDF.pdf. This shows how interopable services can help different counterparts building rapidly data pipelines to gather information and offer a large variety of outputs (maps, statistics,...)
 
-:keyboard: **Imagine a use case where sensor data and WPS could be used in your field of expertise (petroleum data management)** (2 points)
+:keyboard: **Q18 : Imagine a use case where sensor data and WPS could be used in your field of expertise (petroleum data management)** (2 points)
